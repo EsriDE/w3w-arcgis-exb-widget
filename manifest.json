@@ -1,7 +1,7 @@
 {
-  "name": "esride-exb-workshop",
+  "name": "esride-w3w-widget",
   "type": "exb-web-extension-repo",
-  "description": "This is an extension repository for ArcGIS Experience Builder themes and widgets used in Workshops by Esri Germany.",
-  "copyright": "2021 Esri Deutschland GmbH, Niklas Köhn",
+  "description": "This is an extension repository for the ArcGIS Experience Builder what3words widget by Esri Germany.",
+  "copyright": "2022 Esri Deutschland GmbH, Niklas Köhn",
   "license": "http://www.apache.org/licenses/LICENSE-2.0"
 }
