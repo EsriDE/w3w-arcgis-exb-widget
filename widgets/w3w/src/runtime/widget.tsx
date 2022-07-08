@@ -13,7 +13,7 @@ import Polygon from 'esri/geometry/Polygon'
 import { Button } from 'jimu-ui'
 import geometryEngine from 'esri/geometry/geometryEngine'
 
-import what3words, { ApiVersion, What3wordsService, LocationGeoJsonResponse, axiosTransport, GridSectionGeoJsonResponse } from '@what3words/api'
+import what3words, { ApiVersion, What3wordsService, LocationGeoJsonResponse, axiosTransport, GridSectionGeoJsonResponse, FeatureCollectionResponse } from '@what3words/api'
 import { Extent } from 'esri/geometry'
 import geodesicUtils from 'esri/geometry/support/geodesicUtils'
 import FeatureLayer from 'esri/layers/FeatureLayer'
@@ -38,7 +38,7 @@ export default class Widget extends BaseWidget<AllWidgetProps<IMConfig>, State> 
   w3wService: What3wordsService
 
   // hard-coded options
-  format: 'json' | 'geojson' = 'geojson'
+  format: 'geojson' = 'geojson'
   showGridZoomThreshold = 18
   w3wZoomBufferRadiusMeters = 100
 
@@ -174,13 +174,13 @@ export default class Widget extends BaseWidget<AllWidgetProps<IMConfig>, State> 
     }
 
     const w3wAddressCollection = await this.w3wService.convertTo3wa({
+      format: this.format,
       coordinates: {
         lat: geoPoint.y,
         lng: geoPoint.x
       },
-      format: this.format,
       language: this.props.config.w3wLanguage ?? 'en'
-    }) as LocationGeoJsonResponse
+    })
 
     // The return type is wrong in the definitions. It's a FeatureCollection containing the array "features": LocationGeoJsonResponse[] | LocationJsonResponse[]
     return (w3wAddressCollection as any).features[0]
@@ -209,8 +209,9 @@ export default class Widget extends BaseWidget<AllWidgetProps<IMConfig>, State> 
           }
         },
         format: this.format
-      }) as GridSectionGeoJsonResponse
+      })
 
+      // todo: dissolve selection
       const w3wGridLines = this.getW3wGridLineGraphics(w3wGrid, wgs84Extent)
 
       const renderer = this.getRenderer(new Color([255, 0, 0, 0.8]))
