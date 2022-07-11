@@ -28,6 +28,7 @@ Enhance your webpack files accordingly. The article says how to do that and you 
 * search by text input, i.e. the geocoding of a three-word address (maybe use the w3w Locator Services instead of the REST API + JSAPI Search widget to take advantage of the built-in suggest functionality)
 * convert selected vertices or point features to three-word addresses
 * check which features are in the clicked 3x3 meter square
+* connect with Directions Widget
 
 ## Participation
 If you want to participate, please create a fork and send a pull request after developing a new feature. Feel free to open an issue to start a discussion or contact us directly! We are looking forward to your ideas and maybe even productive uses of the widget!  
