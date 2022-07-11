@@ -1,0 +1,258 @@
+{
+  "pages": {
+    "page_0": {
+      "id": "page_0",
+      "mode": "FIT_WINDOW",
+      "type": "NORMAL",
+      "layout": {
+        "LARGE": "layout_0"
+      },
+      "isDefault": true,
+      "isVisible": true,
+      "label": "Seite",
+      "bodyBackgroundColor": ""
+    }
+  },
+  "layouts": {
+    "layout_0": {
+      "type": "FIXED",
+      "content": {
+        "0": {
+          "type": "WIDGET",
+          "bbox": {
+            "left": "0.0%",
+            "right": "0.0%",
+            "top": "7.4%",
+            "bottom": "0.0%",
+            "width": "100.0%",
+            "height": "92.6%"
+          },
+          "widgetId": "widget_1",
+          "setting": {
+            "autoProps": {
+              "right": false,
+              "left": true,
+              "top": true,
+              "bottom": false
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
+        },
+        "2": {
+          "type": "WIDGET",
+          "bbox": {
+            "left": "96.2%",
+            "right": "1.2%",
+            "top": "2.0%",
+            "bottom": "94.2%",
+            "width": "33px",
+            "height": "30px"
+          },
+          "widgetId": "widget_3",
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": false,
+              "bottom": true,
+              "width": false,
+              "height": false
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
+        }
+      },
+      "order": [
+        "0",
+        "2"
+      ]
+    },
+    "layout_1": {
+      "type": "FIXED",
+      "label": "Map FixedLayout",
+      "content": {
+        "0": {
+          "type": "WIDGET",
+          "bbox": {
+            "left": "50%",
+            "right": "0.0%",
+            "top": "633px",
+            "bottom": "3.5%",
+            "width": "64.3%",
+            "height": "11.1%"
+          },
+          "widgetId": "widget_4",
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false
+            },
+            "vCenter": false,
+            "hCenter": true
+          },
+          "isPending": false
+        }
+      },
+      "order": [
+        "0"
+      ]
+    }
+  },
+  "exbVersion": "1.8.0",
+  "mainSizeMode": "LARGE",
+  "theme": "themes/default/",
+  "forBuilderAttributes": {
+    "lockLayout": false
+  },
+  "template": "blankfullscreen",
+  "widgets": {
+    "widget_1": {
+      "uri": "widgets/arcgis/arcgis-map/",
+      "version": "1.8.0",
+      "label": "Schland",
+      "config": {
+        "toolConifg": {
+          "canZoom": true,
+          "canHome": true,
+          "canSearch": true,
+          "canNavigation": true,
+          "canLayers": true
+        },
+        "isUseCustomMapState": false,
+        "initialMapState": null,
+        "initialMapDataSourceID": "dataSource_6"
+      },
+      "id": "widget_1",
+      "layouts": {
+        "MapFixedLayout": {
+          "LARGE": "layout_1"
+        }
+      },
+      "useDataSources": [
+        {
+          "dataSourceId": "dataSource_6",
+          "mainDataSourceId": "dataSource_6"
+        }
+      ]
+    },
+    "widget_3": {
+      "uri": "widgets/common/share/",
+      "version": "1.8.0",
+      "label": "Freigeben",
+      "config": {
+        "uiMode": "POPUP",
+        "popup": {
+          "icon": "",
+          "items": [
+            "embed",
+            "qrcode",
+            "email",
+            "facebook",
+            "twitter",
+            "pinterest",
+            "linkedin"
+          ],
+          "tooltip": ""
+        },
+        "inline": {
+          "items": [
+            "facebook",
+            "twitter",
+            "pinterest",
+            "linkedin",
+            "embed",
+            "qrcode",
+            "email",
+            "sharelink"
+          ],
+          "design": {
+            "direction": "HORIZONTAL",
+            "hideLabel": false,
+            "btnRad": 0,
+            "btnColor": "",
+            "iconColor": "",
+            "size": "default"
+          }
+        }
+      },
+      "id": "widget_3"
+    },
+    "widget_4": {
+      "uri": "widgets/w3w/",
+      "version": "2.0.0",
+      "label": "what3words",
+      "config": {
+        "w3wApiKey": "21APP4UG",
+        "showW3wLogo": true,
+        "showW3wSquare": true,
+        "showW3wText": true,
+        "zoomToW3wSquare": false,
+        "useMapMidpoint": false,
+        "w3wLanguage": "en",
+        "showCoordinates": true,
+        "showZoomButton": true
+      },
+      "id": "widget_4",
+      "useMapWidgetIds": [
+        "widget_1"
+      ],
+      "style": {
+        "background": {
+          "color": "rgba(240,240,240,0.48)",
+          "fillType": "fit",
+          "image": {
+            "url": ""
+          }
+        }
+      }
+    }
+  },
+  "widgetsManifest": {},
+  "views": {},
+  "sections": {},
+  "dialogs": {},
+  "dataSources": {
+    "dataSource_5": {
+      "id": "dataSource_5",
+      "type": "WEB_MAP",
+      "sourceLabel": "Different kinds of editing",
+      "itemId": "d2280c80ba3f475083ad88fc6267878d",
+      "portalUrl": "https://esri-de.maps.arcgis.com"
+    },
+    "dataSource_6": {
+      "id": "dataSource_6",
+      "type": "WEB_MAP",
+      "sourceLabel": "Wind Directions for w3w Demo",
+      "itemId": "dfda5ada597648eeacb915c28dbaa0e5",
+      "portalUrl": "https://esri-de.maps.arcgis.com"
+    }
+  },
+  "messageConfigs": {},
+  "attributes": {
+    "portalUrl": "https://esri-de.maps.arcgis.com",
+    "isWebTier": false,
+    "clientId": "",
+    "title": "w3w simple",
+    "description": "",
+    "type": "Web Experience",
+    "thumbnail": null
+  },
+  "sharedThemeVariables": {
+    "header": {},
+    "body": {},
+    "button": {},
+    "logo": {}
+  },
+  "pageStructure": [
+    {
+      "page_0": []
+    }
+  ],
+  "timestamp": 1657541962871
+}
