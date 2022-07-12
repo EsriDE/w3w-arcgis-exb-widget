@@ -29,6 +29,7 @@ Enhance your webpack files accordingly. The article says how to do that and you 
 * convert selected vertices or point features to three-word addresses
 * check which features are in the clicked 3x3 meter square
 * connect with Directions Widget
+* add switch in backend to show language dropdown on widget frontend
 
 ## Participation
 If you want to participate, please create a fork and send a pull request after developing a new feature. Feel free to open an issue to start a discussion or contact us directly! We are looking forward to your ideas and maybe even productive uses of the widget!  
