@@ -23,7 +23,6 @@ import { AllWidgetSettingProps } from 'jimu-for-builder'
 import { JimuMapViewSelector, SettingRow, SettingSection } from 'jimu-ui/advanced/setting-components'
 import { ArcGISDataSourceTypes } from 'jimu-arcgis'
 import { IMConfig } from '../config'
-import defaultMessages from './translations/default'
 import { Select, Switch, TextInput, Option } from 'jimu-ui'
 import what3words, { ApiVersion, What3wordsService, axiosTransport } from '@what3words/api'
 
@@ -164,7 +163,7 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                     className="map-selector-section"
                     title={this.props.intl.formatMessage({
                       id: 'selectMapWidget',
-                      defaultMessage: defaultMessages.selectMapWidget
+                      defaultMessage: 'selectMapWidget'
                     })}>
                     <SettingRow>
                         <JimuMapViewSelector
@@ -177,15 +176,15 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                     className="map-selector-section"
                     title={this.props.intl.formatMessage({
                       id: 'w3wSettings',
-                      defaultMessage: defaultMessages.w3wSettings
+                      defaultMessage: 'w3wSettings'
                     })}>
                     <SettingRow>
                       <label>
-                          <FormattedMessage id="w3wApiKey" defaultMessage={defaultMessages.w3wApiKey} />
+                          <FormattedMessage id="w3wApiKey" defaultMessage={'w3wApiKey'} />
                       </label><br/>
                       <TextInput
                           type="password"
-                          placeholder={defaultMessages.w3wApiKey}
+                          placeholder={'w3wApiKey'}
                           defaultValue={this.props.config.w3wApiKey}
                           onAcceptValue={this.setW3wApiKey}
                       />
@@ -194,7 +193,7 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                         <div className="w-100">
                             <div className="checkbox-row">
                                 <label>
-                                    <FormattedMessage id="w3wLanguage" defaultMessage={defaultMessages.w3wLanguage} />
+                                    <FormattedMessage id="w3wLanguage" defaultMessage={'w3wLanguage'} />
                                 </label>
                                 <Select onChange={(evt: any) => this.setw3wLanguage(evt.target.value)} value={this.props.config.w3wLanguage}>
                                   {this.state.languages?.map((language: AvailableLanguage) => <Option key={language.code} value={language.code}>{language.nativeName} ({language.name})</Option>)}
@@ -207,14 +206,14 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                     className="map-selector-section"
                     title={this.props.intl.formatMessage({
                       id: 'mapDisplayOptions',
-                      defaultMessage: defaultMessages.mapDisplayOptions
+                      defaultMessage: 'mapDisplayOptions'
                     })}>
                     <SettingRow>
                         <div className="w-100">
                             <div className="checkbox-row">
                                 <Switch checked={this.props.config?.showW3wLogo || false} onChange={this.switchShowW3wLogo} />
                                 <label>
-                                    <FormattedMessage id="showW3wLogo" defaultMessage={defaultMessages.showW3wLogo} />
+                                    <FormattedMessage id="showW3wLogo" defaultMessage={'showW3wLogo'} />
                                 </label>
                             </div>
                         </div>
@@ -227,7 +226,7 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                                     onChange={this.switchShowW3wSquare}
                                 />
                                 <label>
-                                    <FormattedMessage id="showW3wSquare" defaultMessage={defaultMessages.showW3wSquare} />
+                                    <FormattedMessage id="showW3wSquare" defaultMessage={'showW3wSquare'} />
                                 </label>
                             </div>
                         </div>
@@ -240,7 +239,7 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                                     onChange={this.switchShowW3wText}
                                 />
                                 <label>
-                                    <FormattedMessage id="showW3wText" defaultMessage={defaultMessages.showW3wText} />
+                                    <FormattedMessage id="showW3wText" defaultMessage={'showW3wText'} />
                                 </label>
                             </div>
                         </div>
@@ -250,7 +249,7 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                     className="map-selector-section"
                     title={this.props.intl.formatMessage({
                       id: 'widgetDisplayOptions',
-                      defaultMessage: defaultMessages.widgetDisplayOptions
+                      defaultMessage: 'widgetDisplayOptions'
                     })}>
                     <SettingRow>
                         <div className="w-100">
@@ -260,7 +259,7 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                                     onChange={this.switchShowCoordinates}
                                 />
                                 <label>
-                                    <FormattedMessage id="showCoordinates" defaultMessage={defaultMessages.showCoordinates} />
+                                    <FormattedMessage id="showCoordinates" defaultMessage={'showCoordinates'} />
                                 </label>
                             </div>
                         </div>
@@ -273,7 +272,7 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                                     onChange={this.switchShowZoomButton}
                                 />
                                 <label>
-                                    <FormattedMessage id="showZoomButton" defaultMessage={defaultMessages.showZoomButton} />
+                                    <FormattedMessage id="showZoomButton" defaultMessage={'showZoomButton'} />
                                 </label>
                             </div>
                         </div>
@@ -283,7 +282,7 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                     className="map-selector-section"
                     title={this.props.intl.formatMessage({
                       id: 'userOptions',
-                      defaultMessage: defaultMessages.userOptions
+                      defaultMessage: 'userOptions'
                     })}>
                     <SettingRow>
                         <div className="w-100">
@@ -295,8 +294,8 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                                 />
                                 <label>
                                   {this.props.config.useMapMidpoint
-                                    ? <FormattedMessage id="useMapMidpoint" defaultMessage={defaultMessages.useMapMidpoint} />
-                                    : <FormattedMessage id="useClickpoint" defaultMessage={defaultMessages.useClickpoint} /> }
+                                    ? <FormattedMessage id="useMapMidpoint" defaultMessage={'useMapMidpoint'} />
+                                    : <FormattedMessage id="useClickpoint" defaultMessage={'useClickpoint'} /> }
                                 </label>
                             </div>
                         </div>
@@ -309,7 +308,7 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                                     onChange={this.switchZoomToW3wSquare}
                                 />
                                 <label>
-                                    <FormattedMessage id="zoomToW3w" defaultMessage={defaultMessages.zoomToW3w} />
+                                    <FormattedMessage id="zoomToW3w" defaultMessage={'zoomToW3w'} />
                                 </label>
                             </div>
                         </div>

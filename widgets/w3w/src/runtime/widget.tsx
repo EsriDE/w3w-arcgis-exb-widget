@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { AllWidgetProps, FormattedMessage, jsx, BaseWidget, css } from 'jimu-core'
 import { JimuMapViewComponent, JimuMapView } from 'jimu-arcgis'
-import defaultMessages from './translations/default'
 import { IMConfig } from '../config'
 
 import webMercatorUtils from 'esri/geometry/support/webMercatorUtils'
@@ -495,8 +494,8 @@ export default class Widget extends BaseWidget<AllWidgetProps<IMConfig>, State> 
 
               {this.props.config.showCoordinates &&
                 <div className="w3wInfo">
-                  <div className="w3wInfoProp"><span className='w3wRed w3wInfoFirstCol'>{defaultMessages.x}</span><span>{this.state.w3wPoint && this.state.w3wPoint.x}</span></div>
-                  <div className="w3wInfoProp"><span className='w3wRed w3wInfoFirstCol'>{defaultMessages.y}</span><span>{this.state.w3wPoint && this.state.w3wPoint.y}</span></div>
+                  <div className="w3wInfoProp"><span className='w3wRed w3wInfoFirstCol'>x</span><span>{this.state.w3wPoint && this.state.w3wPoint.x}</span></div>
+                  <div className="w3wInfoProp"><span className='w3wRed w3wInfoFirstCol'>y</span><span>{this.state.w3wPoint && this.state.w3wPoint.y}</span></div>
                 </div>
               }
             </div>
