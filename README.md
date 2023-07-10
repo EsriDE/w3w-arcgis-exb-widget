@@ -31,6 +31,7 @@ Enhance your webpack files accordingly. The article says how to do that and you 
 * connect with Directions Widget
 * add switch in backend to show language dropdown on widget frontend
 * parse url parameters to directly zoom to a w3w address
+* implement widget output data source: https://developers.arcgis.com/experience-builder/guide/core-concepts/data-source/#widget-output-data-source 
 
 ## Participation
 If you want to participate, please create a fork and send a pull request after developing a new feature. Feel free to open an issue to start a discussion or contact us directly! We are looking forward to your ideas and maybe even productive uses of the widget!  
