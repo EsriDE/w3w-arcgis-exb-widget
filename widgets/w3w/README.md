@@ -1,5 +1,5 @@
 # what3words widget
-Niklas Köhn, Esri Deutschland GmbH, 2022
+## by [Niklas Köhn](https://github.com/esride-nik), Esri Deutschland
 
 This widget uses the what3words REST API to find the w3w address of the click point resp. the center point of the map.
 
