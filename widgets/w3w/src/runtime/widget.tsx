@@ -397,7 +397,7 @@ export default class Widget extends BaseWidget<AllWidgetProps<IMConfig>, State> 
   private getRenderer (color: __esri.Color) {
     const defaultSym = {
       type: 'simple-line',
-      width: '0.5px'
+      width: '2px' //'0.5px'
     }
     const renderer = {
       type: 'simple',
@@ -414,11 +414,11 @@ export default class Widget extends BaseWidget<AllWidgetProps<IMConfig>, State> 
           stops: [
             {
               value: 0,
-              color: 'rgba(230, 230, 230, 0.5)'
+              color: this.getW3wColorRgba(0.1)
             },
             {
               value: 0.8,
-              color: 'rgba(200, 100, 100, 0.6)'
+              color: this.getW3wColorRgba(0.3)
             },
             {
               value: 1,
