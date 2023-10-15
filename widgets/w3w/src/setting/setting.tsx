@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { React, Immutable, FormattedMessage, css, jsx } from 'jimu-core'
 import { type AllWidgetSettingProps } from 'jimu-for-builder'
-import { JimuMapViewSelector, SettingRow, SettingSection } from 'jimu-ui/advanced/setting-components'
+import { MapWidgetSelector, SettingRow, SettingSection } from 'jimu-ui/advanced/setting-components'
 import { ArcGISDataSourceTypes } from 'jimu-arcgis'
 import { type IMConfig } from '../config'
 import defaultMessages from './translations/default'
@@ -148,9 +148,9 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                       defaultMessage: defaultMessages.selectMapWidget
                     })}>
                     <SettingRow>
-                        <JimuMapViewSelector
-                            onChange={this.onMapSelected}
-                            useMapViewIds={this.props.useMapWidgetIds as unknown as string[]}
+                        <MapWidgetSelector
+                            onSelect={this.onMapSelected}
+                            useMapWidgetIds={this.props.useMapWidgetIds}
                         />
                     </SettingRow>
                 </SettingSection>
