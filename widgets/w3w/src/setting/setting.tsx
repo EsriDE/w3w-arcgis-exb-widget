@@ -1,31 +1,12 @@
 /** @jsx jsx */
-/**
-  Licensing
-
-  Copyright 2020 Esri
-
-  Licensed under the Apache License, Version 2.0 (the "License"); You
-  may not use this file except in compliance with the License. You may
-  obtain a copy of the License at
-  http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-  implied. See the License for the specific language governing
-  permissions and limitations under the License.
-
-  A copy of the license is available in the repository's
-  LICENSE file.
-*/
 import { React, Immutable, FormattedMessage, css, jsx } from 'jimu-core'
-import { AllWidgetSettingProps } from 'jimu-for-builder'
+import { type AllWidgetSettingProps } from 'jimu-for-builder'
 import { JimuMapViewSelector, SettingRow, SettingSection } from 'jimu-ui/advanced/setting-components'
 import { ArcGISDataSourceTypes } from 'jimu-arcgis'
-import { IMConfig } from '../config'
+import { type IMConfig } from '../config'
 import defaultMessages from './translations/default'
 import { Select, Switch, TextInput, Option } from 'jimu-ui'
-import what3words, { ApiVersion, What3wordsService, axiosTransport } from '@what3words/api'
+import what3words, { ApiVersion, type What3wordsService, axiosTransport } from '@what3words/api'
 
 interface AvailableLanguage {
   code: string
@@ -63,7 +44,7 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
   async getLanguages () {
     this.setState({
       languages: (await this.w3wService.availableLanguages()).languages
-    }, () => console.log(this.state.languages))
+    })
   }
 
   onMapSelected = (useMapWidgetIds: string[]) => {
@@ -168,8 +149,8 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                     })}>
                     <SettingRow>
                         <JimuMapViewSelector
-                            onSelect={this.onMapSelected}
-                            useMapWidgetIds={this.props.useMapWidgetIds}
+                            onChange={this.onMapSelected}
+                            useMapViewIds={this.props.useMapWidgetIds as unknown as string[]}
                         />
                     </SettingRow>
                 </SettingSection>
@@ -196,7 +177,7 @@ export default class Setting extends React.PureComponent<AllWidgetSettingProps<I
                                 <label>
                                     <FormattedMessage id="w3wLanguage" defaultMessage={defaultMessages.w3wLanguage} />
                                 </label>
-                                <Select onChange={(evt: any) => this.setw3wLanguage(evt.target.value)} value={this.props.config.w3wLanguage}>
+                                <Select onChange={(evt: any) => { this.setw3wLanguage(evt.target.value) }} value={this.props.config.w3wLanguage}>
                                   {this.state.languages?.map((language: AvailableLanguage) => <Option key={language.code} value={language.code}>{language.nativeName} ({language.name})</Option>)}
                                 </Select>
                             </div>

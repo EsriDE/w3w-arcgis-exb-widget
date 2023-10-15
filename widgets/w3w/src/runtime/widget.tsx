@@ -1,20 +1,20 @@
 /** @jsx jsx */
-import { AllWidgetProps, FormattedMessage, jsx, BaseWidget, css } from 'jimu-core'
-import { JimuMapViewComponent, JimuMapView } from 'jimu-arcgis'
+import { type AllWidgetProps, FormattedMessage, jsx, BaseWidget, css } from 'jimu-core'
+import { JimuMapViewComponent, type JimuMapView } from 'jimu-arcgis'
 import defaultMessages from './translations/default'
-import { IMConfig } from '../config'
+import { type IMConfig } from '../config'
 
 import webMercatorUtils from 'esri/geometry/support/webMercatorUtils'
 import Point from 'esri/geometry/Point'
 import GraphicsLayer from 'esri/layers/GraphicsLayer'
 import Graphic from 'esri/Graphic'
-import PictureMarkerSymbol from 'esri/symbols/PictureMarkerSymbol'
+import type PictureMarkerSymbol from 'esri/symbols/PictureMarkerSymbol'
 import Polygon from 'esri/geometry/Polygon'
 import { Button } from 'jimu-ui'
 import geometryEngine from 'esri/geometry/geometryEngine'
 
-import what3words, { ApiVersion, What3wordsService, LocationGeoJsonResponse, axiosTransport, GridSectionGeoJsonResponse } from '@what3words/api'
-import { Extent } from 'esri/geometry'
+import what3words, { ApiVersion, type What3wordsService, type LocationGeoJsonResponse, axiosTransport, type GridSectionGeoJsonResponse } from '@what3words/api'
+import { type Extent } from 'esri/geometry'
 import geodesicUtils from 'esri/geometry/support/geodesicUtils'
 import FeatureLayer from 'esri/layers/FeatureLayer'
 import Color from 'esri/Color'
@@ -244,7 +244,7 @@ export default class Widget extends BaseWidget<AllWidgetProps<IMConfig>, State> 
     }
   }
 
-  private readonly updateW3wAddress= async (point: Point): Promise<void> => {
+  private readonly updateW3wAddress = async (point: Point): Promise<void> => {
     const w3wAddress = await this.getW3wAddress(point)
     const w3wPoint = new Point({
       x: w3wAddress.geometry.coordinates[0],

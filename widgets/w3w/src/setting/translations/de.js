@@ -1,17 +1,23 @@
-define({
-  selectMapWidget: 'Bitte Karte wählen',
-  mapDisplayOptions: 'Kartenanzeige',
-  widgetDisplayOptions: 'Widgetanzeige',
-  w3wSettings: 'what3words Einstellungen',
-  userOptions: 'Benutzereinstellungen',
-  showW3wLogo: 'Logo zeigen',
-  showW3wSquare: 'Quadrat zeigen',
-  showW3wText: 'Text zeigen',
-  zoomToW3w: 'automatisch zoomen',
-  w3wApiKey: 'what3words API Key',
-  useClickpoint: 'Klickpunkt verwenden',
-  useMapMidpoint: 'Kartenmittelpunkt verwenden',
-  w3wLanguage: 'what3words Sprache',
-  showCoordinates: 'Koordinaten zeigen',
-  showZoomButton: 'Zoom-Button zeigen'
+System.register([], function (_export) {
+  return {
+    execute: function () {
+      _export({
+        selectMapWidget: 'Bitte Karte wählen',
+        mapDisplayOptions: 'Kartenanzeige',
+        widgetDisplayOptions: 'Widgetanzeige',
+        w3wSettings: 'what3words Einstellungen',
+        userOptions: 'Benutzereinstellungen',
+        showW3wLogo: 'Logo zeigen',
+        showW3wSquare: 'Quadrat zeigen',
+        showW3wText: 'Text zeigen',
+        zoomToW3w: 'automatisch zoomen',
+        w3wApiKey: 'what3words API Key',
+        useClickpoint: 'Klickpunkt verwenden',
+        useMapMidpoint: 'Kartenmittelpunkt verwenden',
+        w3wLanguage: 'what3words Sprache',
+        showCoordinates: 'Koordinaten zeigen',
+        showZoomButton: 'Zoom-Button zeigen',
+      })
+    }
+  }
 });
