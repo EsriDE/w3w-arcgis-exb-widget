@@ -8,7 +8,7 @@
 Clone the sample repo into your Experience Builder Client root folder and restart your watcher.
 
 ## About
-This is a widget developed for demonstration purposes at Esri Deutschland, using the what3words REST API 
+This is a widget developed for demonstration purposes at Esri Deutschland, using the what3words REST API. It's not been actively maintained since what3words cancelled their free API tier.
 
 ## Having issues?
 
